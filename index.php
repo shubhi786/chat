@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +34,7 @@
 <body>
     
     <section>
-        <h1 class="text-center">Chattappa</h1>
+        <h1 class="main_heading">Chattappa</h1>
 
         <div class="login">
             <h2 class="heading">Login</h2>    
@@ -43,8 +48,29 @@
 
                 if(isset($_POST['login']))
                 {
-                    
+                    $uname = $_POST['uname'];
+                    $pass = $_POST['pass'];
+
+                    $sql = "SELECT * FROM users WHERE uname='$uname' AND pass='$pass' ";
+                    $run = $conn->query($sql);
+
+                    if($run->num_rows > 0) 
+                    {
+                        if($run) 
+                        {
+                            header('location:php/main.php');
+                            $_SESSION['uname'] = $uname;
+                        }
+                        else
+                        {
+                            throw new Exception("Invalid credentials");
+                        }
+                    }
                 }
+            }
+            catch(Exception $e)
+            {
+                echo $e->getMessage();
             }
 
             ?>
