@@ -29,13 +29,65 @@ session_start();
     <!-- bootstrap css files -->
 
     <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+
+    <style>
+    
+
+        
+
+    </style>
 </head>
 <body>
 
-    <section class="container">
-        <div class="heading">
-            <h1 class="profile_name">fheha</h1>
+    <section class="profile_container">
+        <div class="profile_heading">   
+            <a href="../index.php"><i class="fas fa-arrow-left left_arrow_back"></i></a>
+
+            <h1 class="profile_title">Sandesh</h1>
+            <?php
+            
+            try
+            {
+                require_once('dbconfig.php');
+
+                $uname = $_SESSION['uname'];
+
+                $get_img = "SELECT * FROM users WHERE uname='$uname' ";
+                $run = $conn->query($get_img);
+
+                if($run->num_rows > 0)
+                {
+                    while($row = $run->fetch_assoc())
+                    {?> 
+                
+            <img class="" src="<?php echo $row['img']; ?>" alt="profile"/>
+            <?php
+                    }
+                }
+                else
+                {
+                    throw new Exception('Something went wrong');
+                }
+            }
+            catch(Exception $e)
+            {
+                echo $e->getMessage();
+            }
+
+            ?>
         </div>
+        
+        <div class="chats">
+            <div class="item">
+                <a href="chat.php?name=iqbal">
+                    <img src="../img/my.jpg" alt=""/>    
+                    Iqbal
+                </a>
+            </div>
+        </div>
+       
+
+        
     </section>
 
 
@@ -45,6 +97,10 @@ session_start();
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/popper.min.js"></script>
     <!-- bootstrap files includes js -->
+
+    <!-- font awesome kit code -->
+    <script src="https://kit.fontawesome.com/ea7b70474d.js" crossorigin="anonymous"></script>
+    <!-- font awesome kit code -->
 
 </body>
 </html>

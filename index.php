@@ -31,13 +31,13 @@ session_start();
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 
 </head>
-<body>
+<body style="background-color:#98DDCA;">
     
     <section>
-        <h1 class="main_heading">Chattappa</h1>
+        <h1 class="main_heading">Sandesh</h1>
 
         <div class="login">
-            <h2 class="heading">Login</h2>    
+            <h2 class="login_heading">Login</h2>    
 
             <form action="" method="post" enctype="multipart/form-data">
             <?php

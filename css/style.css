@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #98DDCA;
+  overflow-x: hidden;
 }
 
 body .main_heading {
@@ -15,11 +15,11 @@ body .main_heading {
   text-shadow: 0px 0px 8px #989696;
 }
 
-body h2 {
+body .login_heading {
   font-family: "Otomanopee One", sans-serif;
   text-align: center;
   font-size: 3rem;
-  color: #FFE194;
+  color: #FE9898;
   text-shadow: 0px 0px 8px #989696;
 }
 
@@ -82,14 +82,13 @@ body .parent label {
 body input[type=submit] {
   margin-top: 20px;
   padding: 10px;
-  background-color: #FFE194;
   border: none;
   border-radius: 20px;
   width: 100px;
   cursor: pointer;
   border-radius: 50px;
   border-radius: 50px;
-  background: #FFE194;
+  background: #FE9898;
   -webkit-box-shadow: 25px 25px 50px #81bcac, -25px -25px 50px #affee8;
           box-shadow: 25px 25px 50px #81bcac, -25px -25px 50px #affee8;
 }
@@ -104,7 +103,101 @@ body .signup_cred a {
   text-decoration: none;
 }
 
-.profile_name {
-  color: red;
+.profile_container .profile_heading {
+  width: 100%;
+  height: 100px;
+  background-color: #FE9898;
+  position: relative;
+}
+
+.profile_container .profile_heading .left_arrow_back {
+  position: absolute;
+  top: 20%;
+  left: 20px;
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.profile_container .profile_heading .profile_title {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 3rem;
+  font-family: "Otomanopee One", sans-serif;
+  color: #fff;
+  text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.profile_container .profile_heading img {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  right: 10px;
+  top: 10%;
+  border-radius: 50%;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.chats {
+  width: 100%;
+  padding: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chats a {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #000;
+  text-decoration: none;
+  padding: 3rem;
+  font-size: 2rem;
+  font-family: 'Raleway', sans-serif;
+}
+
+.chats .item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.chat_area {
+  width: 100%;
+  height: 570px;
+  border: 1px solid #000;
+}
+
+.chat_area .message {
+  background-color: #FE9898;
+  padding: 10px;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: bolder;
+}
+
+.input_area {
+  width: 100%;
+  position: relative;
+  margin-left: 5%;
+}
+
+.input_area input[type=text] {
+  border: 1px solid #000;
+  width: 80%;
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+}
+
+.input_area button {
+  border: none;
+  padding: 10px;
+  width: 100px;
+  border-radius: 20px;
+  background-color: #FE9898;
+  color: #fff;
+  font-size: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
